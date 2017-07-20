@@ -85,17 +85,13 @@ function getDatas($userID) {
     <?php
     $x = 0;
     $y = 0;
-    $to_time = strtotime(date("h:i:sa"));
-    while ($x < 10000) {
+    while ($x < 3) {
         $datas = getDatas($x);
-        // echo($datas);
-        if ($datas === "") $y++;
-        $x++;
+        echo($datas);
+        if ($datas != "") {
+            $x++;
+        }
     }
-    echo("<p>il y a ".$y." comptes 404 sur ".$x." comptes.</p>");
-    echo ("<p>".(($y / $x)*100)."%</p>");
-    $from_time = strtotime(date("h:i:sa"));
-    echo round(abs($to_time - $from_time) / 60,2). " minutes pour calculer.";
     ?>
     </body>
 </html>
